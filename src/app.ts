@@ -1,18 +1,20 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-
+import {config} from './config/index';
+import { middleware } from './middlewares'; 
 
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
 //configuration 
-dotenv.config();
+config.init(app);
+
 
 // Middlewares
-app.use(express.json());
-app.use(cors());
+middleware.init(app);
+
 
 // Basic Route
 app.get('/', (req, res) => {

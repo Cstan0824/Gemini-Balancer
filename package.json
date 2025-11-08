@@ -1,10 +1,12 @@
 {
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@types/express": "^4.17.1",
+    "@types/express": "^4.17.25",
     "@types/sqlite3": "^3.1.11",
     "eslint": "^9.39.1",
     "globals": "^16.5.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.3"
   },
@@ -15,7 +17,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/app.js",
-    "dev": "tsc --watch",
+    "dev": "nodemon src/app.ts",
     "lint": "npx eslint . --ext .ts"
   },
   "keywords": [],
@@ -24,7 +26,9 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
-    "express": "^4.17.1",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "path": "^0.12.7",
     "sqlite3": "^5.1.7"
   }
 }
